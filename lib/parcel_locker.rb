@@ -1,4 +1,4 @@
-require "parcel_locker/version"
+require 'parcel_locker/version'
 
 module ParcelLocker
   # Your code goes here...
