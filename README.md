@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bartlomiejh/parcel_locker.svg)](https://travis-ci.org/bartlomiejh/parcel_locker)
+[![Coverage Status](https://coveralls.io/repos/bartlomiejh/parcel_locker/badge.svg?branch=master&service=github)](https://coveralls.io/github/bartlomiejh/parcel_locker?branch=master)
 
 # ParcelLocker
 
