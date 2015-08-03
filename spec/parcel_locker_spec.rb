@@ -31,15 +31,21 @@ describe ParcelLocker do
       end
     end
 
-    context 'when there is data in response' do
-      subject { described_class.all.first }
-      let(:data) { File.read('spec/fixtures/one_machine_response.json') }
-      it { is_expected.to include('id' => 'ALL992') }
-      it do
-        is_expected.to include(
-          'id', '_links', 'type', 'services', 'payment_type', 'address', 'status',
-          'address_str', 'location', 'location_description'
-        )
+    context 'when data is parsed' do
+      subject { described_class.all }
+      let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
+      it { is_expected.to have_exactly(5).items }
+
+      context 'and one record is taken' do
+        subject { described_class.all.first }
+        let(:data) { File.read('spec/fixtures/one_machine_response.json') }
+        it { is_expected.to include('id' => 'ALL992') }
+        it do
+          is_expected.to include(
+            'id', '_links', 'type', 'services', 'payment_type', 'address', 'status',
+            'address_str', 'location', 'location_description'
+          )
+        end
       end
     end
   end

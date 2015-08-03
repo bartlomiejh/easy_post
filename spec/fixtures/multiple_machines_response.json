@@ -1,0 +1,133 @@
+{"_links": {
+    "self": {
+        "href": "/v4/machines"
+    }
+}, "total_count": "1328", "_embedded": {
+    "machines": [
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/ALL992"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=51.81284,19.31626&zoom=15&markers=color:blue%7Clabel:X%7C51.81284,19.31626"
+                }
+            },
+            "id": "ALL992",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Piłsudskiego",
+                "building_no": "2/4",
+                "post_code": "95-070",
+                "city": "Aleksandrów Łódzki",
+                "province": "łódzkie"
+            },
+            "status": "Operating",
+            "address_str": "Piłsudskiego 2/4, Aleksandrów Łódzki",
+            "location": [51.81284, 19.31626],
+            "location_description": "Przy markecie Polomarket"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/ALW01MP"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=50.0639,19.54281&zoom=15&markers=color:blue%7Clabel:X%7C50.0639,19.54281"
+                }
+            },
+            "id": "ALW01MP",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Marii Skłodowskiej Curie",
+                "building_no": "6A",
+                "post_code": "32-566",
+                "city": "Alwernia",
+                "province": "małopolskie"
+            },
+            "status": "Operating",
+            "address_str": "Marii Skłodowskiej Curie 6A, Alwernia",
+            "location": [50.0639, 19.54281],
+            "location_description": "Alwernia Skłodowskiej MK Market"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/AND039"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=49.85558,19.33405&zoom=15&markers=color:blue%7Clabel:X%7C49.85558,19.33405"
+                }
+            },
+            "id": "AND039",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Krakowska",
+                "building_no": "83",
+                "post_code": "34-120",
+                "city": "Andrychów",
+                "province": "małopolskie"
+            },
+            "status": "Operating",
+            "address_str": "Krakowska 83, Andrychów",
+            "location": [49.85558, 19.33405],
+            "location_description": "parking obok Biedronki"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/AUG01A"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=53.83704,22.99087&zoom=15&markers=color:blue%7Clabel:X%7C53.83704,22.99087"
+                }
+            },
+            "id": "AUG01A",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Sucharskiego",
+                "building_no": "1",
+                "post_code": "16-300",
+                "city": "Augustów",
+                "province": "podlaskie"
+            },
+            "status": "Operating",
+            "address_str": "Sucharskiego 1, Augustów",
+            "location": [53.83704, 22.99087],
+            "location_description": "Przy markecie Polomarket"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/AUG848"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=53.84141,22.97648&zoom=15&markers=color:blue%7Clabel:X%7C53.84141,22.97648"
+                }
+            },
+            "id": "AUG848",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Wojska Polskiego",
+                "building_no": "53",
+                "post_code": "16-300",
+                "city": "Augustów",
+                "province": "podlaskie"
+            },
+            "status": "Operating",
+            "address_str": "Wojska Polskiego 53, Augustów",
+            "location": [53.84141, 22.97648],
+            "location_description": "Przy markecie Kaufland"
+        }
+    ]
+}}
