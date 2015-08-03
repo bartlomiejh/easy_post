@@ -1,0 +1,29 @@
+{"_embedded": {
+    "machines": [
+        {
+            "_links": {
+                "self": {
+                    "href": "/v4/machines/ALL992"
+                },
+                "minimap": {
+                    "href": "http://maps.googleapis.com/maps/api/staticmap?size=800x400&center=51.81284,19.31626&zoom=15&markers=color:blue%7Clabel:X%7C51.81284,19.31626"
+                }
+            },
+            "id": "ALL992",
+            "type": 0,
+            "services": ["parcel"],
+            "payment_type": 2,
+            "address": {
+                "street": "Piłsudskiego",
+                "building_no": "2/4",
+                "post_code": "95-070",
+                "city": "Aleksandrów Łódzki",
+                "province": "łódzkie"
+            },
+            "status": "Operating",
+            "address_str": "Piłsudskiego 2/4, Aleksandrów Łódzki",
+            "location": [51.81284, 19.31626],
+            "location_description": "Przy markecie Polomarket"
+        }
+    ]
+}}

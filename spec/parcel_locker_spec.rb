@@ -6,7 +6,11 @@ describe ParcelLocker do
   end
 
   describe '.all' do
+    let(:valid_data) { File.read('spec/fixtures/valid_with_one_machine.json') }
+    before do
+      stub_request(:get, ParcelLocker::API_URL).to_return(status: 200, body: valid_data)
+    end
     subject { described_class.all.count }
-    it { is_expected.to eq 1329 }
+    it { is_expected.to eq 1 }
   end
 end
