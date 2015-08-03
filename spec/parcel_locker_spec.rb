@@ -6,11 +6,29 @@ describe ParcelLocker do
   end
 
   describe '.all' do
-    let(:valid_data) { File.read('spec/fixtures/valid_with_one_machine.json') }
-    before do
-      stub_request(:get, ParcelLocker::API_URL).to_return(status: 200, body: valid_data)
+    before :each do
+      stub_request(:get, ParcelLocker::API_URL).to_return(status: 200, body: data)
     end
-    subject { described_class.all.count }
-    it { is_expected.to eq 1 }
+
+    context 'when data schema' do
+      subject { -> { described_class.all } }
+
+      context 'is valid' do
+        let(:data) { '{"_embedded": {"machines": [{"id": "1"}]}}' }
+        it { is_expected.not_to raise_error(JSON::Schema::ValidationError) }
+      end
+
+      context 'is invalid' do
+        context 'and there is no _embedded key' do
+          let(:data) { '{"not_embedded": {"machines": [{"id": "1"}]}}' }
+          it { is_expected.to raise_error(JSON::Schema::ValidationError) }
+        end
+
+        context 'and there is no machines key under _embedded' do
+          let(:data) { '{"_embedded": {"not_machines": [{"id": "1"}]}}' }
+          it { is_expected.to raise_error(JSON::Schema::ValidationError) }
+        end
+      end
+    end
   end
 end
