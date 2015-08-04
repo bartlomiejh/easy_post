@@ -3,9 +3,7 @@
 
 # EasyPost
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/easy_post`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby wrapper for easyPack parcel lockers API (https://api-pl.easypack24.net/v4/machines?type=0).
 
 ## Installation
 
@@ -25,6 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
+To get list of all parcel lockers run:
 ```ruby
 parcel_lockers = EasyPack::ParcelLocker.all
 ```
