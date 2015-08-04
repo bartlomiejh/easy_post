@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe EasyPost::ParcelLocker do
-  describe '.all' do
-    before :each do
-      stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
-    end
+  before :each do
+    stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
+  end
 
+  describe '.all' do
     context 'when data schema' do
       subject { -> { described_class.all } }
 
@@ -48,6 +48,20 @@ describe EasyPost::ParcelLocker do
         it { is_expected.to have_attributes(location: [51.81284, 19.31626]) }
         it { is_expected.to have_attributes(location_description: 'Przy markecie Polomarket') }
       end
+    end
+  end
+
+  describe '.find' do
+    subject { described_class.find(id) }
+    let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
+    context 'when there is element with given id' do
+      let(:id) { 'ALW01MP' }
+      it { is_expected.to be_a_kind_of(described_class) }
+      it { is_expected.to have_attributes(id: 'ALW01MP') }
+    end
+    context 'when there is no element with given id' do
+      let(:id) { 'notExistingId' }
+      it { is_expected.to be_nil }
     end
   end
 end
