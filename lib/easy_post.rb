@@ -21,11 +21,4 @@ module EasyPost
       }
     }
   }
-
-  def self.all
-    response = Faraday.get(API_URL)
-    JSON::Validator.validate!(SCHEMA, response.body)
-    # @review: to be more loosely coupled it could be hash or openstruct
-    JSON.parse(response.body)['_embedded']['machines'].collect { |attr| ParcelLocker.new(attr) }
-  end
 end
