@@ -2,7 +2,7 @@ require 'easy_post/version'
 require 'faraday'
 require 'json'
 require 'json-schema'
-require_relative '../lib/easy_post/locker'
+require_relative '../lib/easy_post/parcel_locker'
 
 module EasyPost
   API_URL = 'https://api-pl.easypack24.net/v4/machines?type=0'
@@ -26,6 +26,6 @@ module EasyPost
     response = Faraday.get(API_URL)
     JSON::Validator.validate!(SCHEMA, response.body)
     # @review: to be more loosely coupled it could be hash or openstruct
-    JSON.parse(response.body)['_embedded']['machines'].collect { |attr| Locker.new(attr) }
+    JSON.parse(response.body)['_embedded']['machines'].collect { |attr| ParcelLocker.new(attr) }
   end
 end

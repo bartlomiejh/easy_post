@@ -40,6 +40,7 @@ describe EasyPost do
         subject { described_class.all.first }
         let(:data) { File.read('spec/fixtures/one_machine_response.json') }
 
+        it { is_expected.to be_a_kind_of(EasyPost::ParcelLocker) }
         it { is_expected.to satisfy { |r| !r._links.empty? } }
         it { is_expected.to have_attributes(id: 'ALL992') }
         it { is_expected.to have_attributes(type: 0) }
