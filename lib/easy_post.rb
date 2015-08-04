@@ -1,10 +1,10 @@
-require 'parcel_locker/version'
+require 'easy_post/version'
 require 'faraday'
 require 'json'
 require 'json-schema'
-require_relative '../lib/parcel_locker/locker'
+require_relative '../lib/easy_post/locker'
 
-module ParcelLocker
+module EasyPost
   API_URL = 'https://api-pl.easypack24.net/v4/machines?type=0'
   SCHEMA = {
     type: 'object',

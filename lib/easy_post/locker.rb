@@ -1,4 +1,4 @@
-module ParcelLocker
+module EasyPost
   class Locker
     attr_reader :id, :_links, :type, :services, :payment_type, :address, :status,
                 :address_str, :location, :location_description

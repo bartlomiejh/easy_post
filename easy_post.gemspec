@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'parcel_locker/version'
+require 'easy_post/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'parcel_locker'
-  spec.version       = ParcelLocker::VERSION
+  spec.name          = 'easy_post'
+  spec.version       = EasyPost::VERSION
   spec.authors       = ['bartlomiejh']
   spec.email         = ['bhopek@gmail.com']
 
-  spec.summary       = 'Ruby toolbox for parcel lockers'
-  spec.description   = 'Ruby toolbox for parcel lockers'
-  spec.homepage      = 'https://github.com/bartlomiejh/parcel_locker'
+  spec.summary       = 'Ruby wrapper for easyPack parcel lockers API'
+  spec.description   = 'Ruby wrapper for easyPack parcel lockers API'
+  spec.homepage      = 'https://github.com/bartlomiejh/easy_post'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

@@ -1,3 +1,3 @@
-module ParcelLocker
+module EasyPost
   VERSION = '0.1.0'
 end

@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/bartlomiejh/parcel_locker.svg)](https://travis-ci.org/bartlomiejh/parcel_locker)
-[![Coverage Status](https://coveralls.io/repos/bartlomiejh/parcel_locker/badge.svg?branch=master&service=github)](https://coveralls.io/github/bartlomiejh/parcel_locker?branch=master)
+[![Build Status](https://travis-ci.org/bartlomiejh/easy_post.svg)](https://travis-ci.org/bartlomiejh/easy_post)
+[![Coverage Status](https://coveralls.io/repos/bartlomiejh/easy_post/badge.svg?branch=master&service=github)](https://coveralls.io/github/bartlomiejh/easy_post?branch=master)
 
-# ParcelLocker
+# EasyPost
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/parcel_locker`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/easy_post`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -12,7 +12,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'parcel_locker'
+gem 'easy_post'
 ```
 
 And then execute:
@@ -21,7 +21,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install parcel_locker
+    $ gem install easy_post
 
 ## Usage
 
@@ -35,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/parcel_locker.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/easy_post.
 
 
 ## License

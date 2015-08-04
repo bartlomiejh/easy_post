@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe ParcelLocker do
+describe EasyPost do
   it 'has a version number' do
-    expect(ParcelLocker::VERSION).not_to be nil
+    expect(EasyPost::VERSION).not_to be nil
   end
 
   describe '.all' do
     before :each do
-      stub_request(:get, ParcelLocker::API_URL).to_return(status: 200, body: data)
+      stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
     end
 
     context 'when data schema' do
