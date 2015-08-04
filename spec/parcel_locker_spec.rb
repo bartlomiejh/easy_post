@@ -39,13 +39,17 @@ describe ParcelLocker do
       context 'and one record is taken' do
         subject { described_class.all.first }
         let(:data) { File.read('spec/fixtures/one_machine_response.json') }
-        it { is_expected.to include('id' => 'ALL992') }
-        it do
-          is_expected.to include(
-            'id', '_links', 'type', 'services', 'payment_type', 'address', 'status',
-            'address_str', 'location', 'location_description'
-          )
-        end
+
+        it { is_expected.to satisfy { |r| !r._links.empty? } }
+        it { is_expected.to have_attributes(id: 'ALL992') }
+        it { is_expected.to have_attributes(type: 0) }
+        it { is_expected.to have_attributes(services: ['parcel']) }
+        it { is_expected.to have_attributes(payment_type: 2) }
+        it { is_expected.to satisfy { |r| !r.address.empty? } }
+        it { is_expected.to have_attributes(status: 'Operating') }
+        it { is_expected.to have_attributes(address_str: 'Piłsudskiego 2/4, Aleksandrów Łódzki') }
+        it { is_expected.to have_attributes(location: [51.81284, 19.31626]) }
+        it { is_expected.to have_attributes(location_description: 'Przy markecie Polomarket') }
       end
     end
   end

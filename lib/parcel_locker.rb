@@ -2,6 +2,7 @@ require 'parcel_locker/version'
 require 'faraday'
 require 'json'
 require 'json-schema'
+require_relative '../lib/parcel_locker/locker'
 
 module ParcelLocker
   API_URL = 'https://api-pl.easypack24.net/v4/machines?type=0'
@@ -24,6 +25,7 @@ module ParcelLocker
   def self.all
     response = Faraday.get(API_URL)
     JSON::Validator.validate!(SCHEMA, response.body)
-    JSON.parse(response.body)['_embedded']['machines']
+    #@review: to be more loosely coupled it could be hash or openstruct
+    JSON.parse(response.body)['_embedded']['machines'].collect { |attr| Locker.new(attr) }
   end
 end
