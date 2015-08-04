@@ -26,9 +26,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-begin
-  parcel_lockers = EasyPack::ParcelLocker.all
-end
+parcel_lockers = EasyPack::ParcelLocker.all
 ```
 
 ## Development
