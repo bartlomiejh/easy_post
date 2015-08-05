@@ -35,7 +35,7 @@ To get parcel locker by its id run:
 
 ## Documentation
 
-For now the only place is project spec directory
+For now the only place for documentation is project spec directory
 
 ## Development
 
