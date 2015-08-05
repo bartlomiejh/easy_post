@@ -1,8 +1,12 @@
-require 'easy_post/version'
 require 'faraday'
 require 'json'
 require 'json-schema'
-require_relative '../lib/easy_post/parcel_locker'
+
+require 'easy_post/version'
+require 'easy_post/parcel_locker'
+require 'easy_post/view_helpers'
+
+require 'easy_post/railtie' if defined?(Rails)
 
 module EasyPost
   API_URL = 'https://api-pl.easypack24.net/v4/machines?type=0'
