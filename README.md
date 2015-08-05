@@ -25,12 +25,12 @@ Or install it yourself as:
 
 To get list of all parcel lockers run:
 ```ruby
-    EasyPack::ParcelLocker.all
+    EasyPost::ParcelLocker.all
 ```
 
 To get parcel locker by its id run:
 ```ruby
-    EasyPack::ParcelLocker.find('id')
+    EasyPost::ParcelLocker.find('id')
 ```
 
 ## Documentation
