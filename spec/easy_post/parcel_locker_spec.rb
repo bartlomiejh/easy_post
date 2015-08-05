@@ -6,28 +6,20 @@ describe EasyPost::ParcelLocker do
   end
 
   describe '.all' do
-    context 'when data schema' do
+    context 'when data schema is invalid' do
       subject { -> { described_class.all } }
-
-      context 'is valid' do
-        let(:data) { '{"_embedded": {"machines": [{"id": "1"}]}}' }
-        it { is_expected.not_to raise_error(JSON::Schema::ValidationError) }
+      context 'and there is no _embedded key' do
+        let(:data) { '{"not_embedded": {"machines": [{"id": "1"}]}}' }
+        it { is_expected.to raise_error(JSON::Schema::ValidationError) }
       end
 
-      context 'is invalid' do
-        context 'and there is no _embedded key' do
-          let(:data) { '{"not_embedded": {"machines": [{"id": "1"}]}}' }
-          it { is_expected.to raise_error(JSON::Schema::ValidationError) }
-        end
-
-        context 'and there is no machines key under _embedded' do
-          let(:data) { '{"_embedded": {"not_machines": [{"id": "1"}]}}' }
-          it { is_expected.to raise_error(JSON::Schema::ValidationError) }
-        end
+      context 'and there is no machines key under _embedded key' do
+        let(:data) { '{"_embedded": {"not_machines": [{"id": "1"}]}}' }
+        it { is_expected.to raise_error(JSON::Schema::ValidationError) }
       end
     end
 
-    context 'when data is parsed' do
+    context 'when data schema is valid' do
       subject { described_class.all }
       let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
       it { is_expected.to have_exactly(5).items }
