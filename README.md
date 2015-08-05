@@ -25,8 +25,17 @@ Or install it yourself as:
 
 To get list of all parcel lockers run:
 ```ruby
-parcel_lockers = EasyPack::ParcelLocker.all
+    EasyPack::ParcelLocker.all
 ```
+
+To get parcel locker by its id run:
+```ruby
+    EasyPack::ParcelLocker.find('id')
+```
+
+## Documentation
+
+For now the only place is project spec directory
 
 ## Development
 
