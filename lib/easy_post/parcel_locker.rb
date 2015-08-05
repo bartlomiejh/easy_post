@@ -25,7 +25,8 @@ module EasyPost
     end
 
     def self.find(id)
-      all[all.index { |parcel_locker| parcel_locker.id == id }]
+      # @review: if we want to have kind of ActiveRecord style, then we can raise some kind of NotFoundError
+      all.find { |parcel_locker| parcel_locker.id == id }
     end
   end
 end
