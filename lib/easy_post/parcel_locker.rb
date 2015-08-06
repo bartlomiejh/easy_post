@@ -28,5 +28,9 @@ module EasyPost
       # @review: if we want to have kind of ActiveRecord style, then we can raise some kind of NotFoundError
       all.find { |parcel_locker| parcel_locker.id == id }
     end
+
+    def self.find_all_by_type(type)
+      all.find_all { |parcel_locker| parcel_locker.type == type }
+    end
   end
 end

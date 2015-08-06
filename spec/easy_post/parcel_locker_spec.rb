@@ -56,4 +56,17 @@ describe EasyPost::ParcelLocker do
       it { is_expected.to be_nil }
     end
   end
+
+  describe '.find_all_by_type' do
+    subject { described_class.find_all_by_type(type) }
+    let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
+    context 'when there are element with given type' do
+      let(:type) { 0 }
+      it { is_expected.to have_exactly(2).items }
+    end
+    context 'when there is no element with given type' do
+      let(:type) { 'notExistingType' }
+      it { is_expected.to eq [] }
+    end
+  end
 end
