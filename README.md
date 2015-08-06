@@ -33,6 +33,16 @@ To get parcel locker by its id run:
     EasyPost::ParcelLocker.find('id')
 ```
 
+To render select list with all parcel lockers use helper:
+```ruby
+    select_parcel_locker(:select_id)
+```
+
+select_parcel_locker helper is facade over select_tag so you can pass also html_options:
+```ruby
+    select_parcel_locker(:select_id, { class: 'custom-select', style: 'color: red' })
+```
+
 ## Documentation
 
 For now the only place for documentation is project spec directory
