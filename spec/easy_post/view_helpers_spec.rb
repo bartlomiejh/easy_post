@@ -8,19 +8,23 @@ describe EasyPost::ViewHelpers do
   end
 
   describe '#select_parcel_locker' do
-    subject { select_parcel_locker 'select_id', class: 'class', style: 'style' }
-
+    subject { select_parcel_locker :select_id }
     # @review: rspec-html-matchers
-    it { is_expected.to include '<select name="select_id" id="select_id" class="class" style="style">' }
     it { is_expected.to include '<option value="ALL992">ALL992</option>' }
     it { is_expected.to include '<option value="ALW01MP">ALW01MP</option>' }
     it { is_expected.to include '<option value="AND039">AND039</option>' }
     it { is_expected.to include '<option value="AUG01A">AUG01A</option>' }
     it { is_expected.to include '<option value="AUG848">AUG848</option>' }
-    it { is_expected.to include '</select>' }
+
+    context 'when html_options are specified' do
+      subject { select_parcel_locker :select_id, class: 'my-class', style: 'color: red;' }
+      it { is_expected.to include '<select name="select_id" id="select_id"' }
+      it { is_expected.to include 'class="my-class" style="color: red;">' }
+      it { is_expected.to include '</select>' }
+    end
 
     context 'when machine type is specified' do
-      subject { select_parcel_locker 'select_id', {}, 0 }
+      subject { select_parcel_locker :select_id, {}, 0 }
       it { is_expected.to include '<option value="ALL992">ALL992</option>' }
       it { is_expected.to include '<option value="ALW01MP">ALW01MP</option>' }
       it { is_expected.not_to include '<option value="AND039">AND039</option>' }
