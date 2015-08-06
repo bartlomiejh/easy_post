@@ -64,7 +64,7 @@
                 }
             },
             "id": "AND039",
-            "type": 0,
+            "type": 1,
             "services": ["parcel"],
             "payment_type": 2,
             "address": {
@@ -89,7 +89,7 @@
                 }
             },
             "id": "AUG01A",
-            "type": 0,
+            "type": 1,
             "services": ["parcel"],
             "payment_type": 2,
             "address": {
@@ -114,7 +114,7 @@
                 }
             },
             "id": "AUG848",
-            "type": 0,
+            "type": 2,
             "services": ["parcel"],
             "payment_type": 2,
             "address": {

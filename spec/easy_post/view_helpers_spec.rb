@@ -18,5 +18,14 @@ describe EasyPost::ViewHelpers do
     it { is_expected.to include '<option value="AUG01A">AUG01A</option>' }
     it { is_expected.to include '<option value="AUG848">AUG848</option>' }
     it { is_expected.to include '</select>' }
+
+    context 'when machine type is specified' do
+      subject { select_parcel_locker 'select_id', {}, 0 }
+      it { is_expected.to include '<option value="ALL992">ALL992</option>' }
+      it { is_expected.to include '<option value="ALW01MP">ALW01MP</option>' }
+      it { is_expected.not_to include '<option value="AND039">AND039</option>' }
+      it { is_expected.not_to include '<option value="AUG01A">AUG01A</option>' }
+      it { is_expected.not_to include '<option value="AUG848">AUG848</option>' }
+    end
   end
 end
