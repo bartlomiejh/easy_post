@@ -1,6 +1,7 @@
 module EasyPost
   module ViewHelpers
     def select_parcel_locker(name, options = {})
+      # @review: custom text displaying should be possible
       option_tags = options_for_select(ParcelLocker.all.collect { |p_l| [p_l.id, p_l.id] })
       select_tag(name, option_tags, options)
     end
