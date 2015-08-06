@@ -35,12 +35,15 @@ To get parcel locker by its id run:
 
 To render select list with all parcel lockers use helper:
 ```ruby
-    select_parcel_locker(:select_id)
+    <%= select_parcel_locker :select_id %>
 ```
-
-select_parcel_locker helper is facade over select_tag so you can pass also html_options:
+Helper described above is facade over select_tag so you can also pass all html options that select tag can take :
 ```ruby
-    select_parcel_locker(:select_id, { class: 'custom-select', style: 'color: red' })
+    <%= select_parcel_locker :select_id, {class: 'my-class', style: 'color: red;'} %>
+```
+Additionally you can pass type value of parcel lockers that you want to render:
+```ruby
+    <%= select_parcel_locker :select_id, {class: 'my-class', style: 'color: red;'}, type_value %>
 ```
 
 ## Documentation
