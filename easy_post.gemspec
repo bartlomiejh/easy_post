@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'rspec-collection_matchers'
+  spec.add_development_dependency 'actionview'
 
   spec.add_dependency 'faraday'
   spec.add_dependency 'json-schema'
