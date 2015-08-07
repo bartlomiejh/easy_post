@@ -25,9 +25,16 @@ module EasyPost
       }
     }
   }
+  CACHE_DIR = File.join(ENV['TMPDIR'] || '/tmp', 'cache')
+  CACHE_EXPIRES_S = 3600
 
   def self.api_client
     # @review: handle of timeouts, wrong response codes
-    Faraday.new(API_URL)
+    Faraday.new(API_URL) do |faraday|
+      faraday.response :caching do
+        ActiveSupport::Cache::FileStore.new CACHE_DIR, namespace: 'easy_post', expires_in: CACHE_EXPIRES_S
+      end
+      faraday.adapter Faraday.default_adapter
+    end
   end
 end

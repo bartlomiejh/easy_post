@@ -14,3 +14,11 @@ RSpec.configure do |config|
   config.include ActionView::Helpers::FormOptionsHelper
   config.include ActionView::Helpers::FormTagHelper
 end
+
+module EasyPost
+  class << self
+    def api_client
+      Faraday.new(API_URL)
+    end
+  end
+end
