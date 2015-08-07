@@ -25,4 +25,9 @@ module EasyPost
       }
     }
   }
+
+  def self.api_client
+    # @review: handle of timeouts, wrong response codes
+    Faraday.new(API_URL)
+  end
 end

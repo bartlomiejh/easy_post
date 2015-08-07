@@ -17,8 +17,7 @@ module EasyPost
     end
 
     def self.all
-      # @review: handle of timeouts, wrong response codes
-      response = Faraday.get(API_URL)
+      response = EasyPost.api_client.get
       JSON::Validator.validate!(SCHEMA, response.body)
       # @review: to be more loosely coupled it could be hash or openstruct
       JSON.parse(response.body)['_embedded']['machines'].collect { |attr| ParcelLocker.new(attr) }
