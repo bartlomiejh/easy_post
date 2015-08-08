@@ -37,5 +37,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'actionview'
 
   spec.add_dependency 'faraday'
+  spec.add_dependency 'faraday_middleware'
   spec.add_dependency 'json-schema'
 end
