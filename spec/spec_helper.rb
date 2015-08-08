@@ -14,3 +14,7 @@ RSpec.configure do |config|
   config.include ActionView::Helpers::FormOptionsHelper
   config.include ActionView::Helpers::FormTagHelper
 end
+
+module EasyPost
+  CACHE_DIR = "tmp/cache/#{Time.now.to_i}"
+end

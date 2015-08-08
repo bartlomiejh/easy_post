@@ -74,20 +74,13 @@ describe EasyPost::ParcelLocker do
   end
 
   describe 'when response is cached' do
-    before :each do
-      stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
-    end
+    let(:data) { File.read('spec/fixtures/one_machine_response.json') }
+    it 'only first request hits API' do
+      stub = stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
 
-    subject { described_class.all }
-
-    context 'and is called first time' do
-      let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
-      it { is_expected.to have_exactly(5).items }
-    end
-
-    context 'and is called second time' do
-      let(:data) { File.read('spec/fixtures/one_machine_response.json') }
-      it { is_expected.to have_exactly(5).items }
+      described_class.all
+      described_class.all
+      expect(stub).to have_been_made.once
     end
   end
 end
