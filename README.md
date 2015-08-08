@@ -21,6 +21,13 @@ Or install it yourself as:
 
     $ gem install easy_post
 
+To change api endpoint initialize EasyPost with new value during startup:
+```ruby
+    EasyPost.configure do |config|
+      config.api_endpoint = 'https://my.api.endpoint'
+    end
+```
+
 ## Usage
 
 To get list of all parcel lockers run:
