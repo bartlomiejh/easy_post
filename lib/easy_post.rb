@@ -11,7 +11,7 @@ require 'easy_post/view_helpers'
 require 'easy_post/railtie' if defined?(Rails)
 
 module EasyPost
-  API_URL = 'https://api-pl.easypack24.net/v4/machines?type=0'
+  DEFAULT_API_ENDPOINT  = 'https://api-pl.easypack24.net/v4/machines?type=0'
   SCHEMA = {
     type: 'object',
     required: ['_embedded'],
@@ -32,7 +32,7 @@ module EasyPost
 
   def self.api_client
     # @review: handle of timeouts, wrong response codes
-    Faraday.new(API_URL) do |faraday|
+    Faraday.new(DEFAULT_API_ENDPOINT) do |faraday|
       faraday.response :caching do
         ActiveSupport::Cache::FileStore.new CACHE_DIR, namespace: 'easy_post', expires_in: CACHE_EXPIRES_S
       end
