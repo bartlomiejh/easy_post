@@ -11,7 +11,6 @@ require 'easy_post/view_helpers'
 require 'easy_post/railtie' if defined?(Rails)
 
 module EasyPost
-  DEFAULT_API_ENDPOINT  = 'https://api-pl.easypack24.net/v4/machines?type=0'
   SCHEMA = {
     type: 'object',
     required: ['_embedded'],
