@@ -4,6 +4,7 @@ describe EasyPost::ViewHelpers do
   let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
 
   before :each do
+    allow(EasyPost).to receive(:api_client) { Faraday.new(EasyPost::API_URL) }
     stub_request(:get, EasyPost::API_URL).to_return(status: 200, body: data)
   end
 
