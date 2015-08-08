@@ -31,7 +31,7 @@ module EasyPost
 
   def self.api_client
     # @review: handle of timeouts, wrong response codes
-    Faraday.new(DEFAULT_API_ENDPOINT) do |faraday|
+    Faraday.new(configuration.api_endpoint) do |faraday|
       faraday.response :caching do
         ActiveSupport::Cache::FileStore.new CACHE_DIR, namespace: 'easy_post', expires_in: CACHE_EXPIRES_S
       end
