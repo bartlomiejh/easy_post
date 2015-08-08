@@ -46,7 +46,7 @@ Additionally you can pass type value of parcel lockers that you want to render:
     <%= select_parcel_locker :select_id, {class: 'my-class', style: 'color: red;'}, type_value %>
 ```
 
-All API requested are cached via ActiveSupport::Cache::FileStore under `File.join(ENV['TMPDIR'] || '/tmp', 'cache')` for 1 hour.
+All API requests are cached via ActiveSupport::Cache::FileStore under `File.join(ENV['TMPDIR'] || '/tmp', 'cache')` for 1 hour.
 
 ## Documentation
 
