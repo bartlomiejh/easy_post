@@ -10,8 +10,8 @@ module EasyPost
     describe '#get' do
       context 'when response is not cached' do
         before :each do
-          allow(EasyPost::Connection).to receive(:api_client) { Faraday.new(EasyPost::DEFAULT_API_ENDPOINT) }
-          stub_request(:get, EasyPost::DEFAULT_API_ENDPOINT).to_return(status: 200, body: data)
+          allow(EasyPost::Connection).to receive(:api_client) { Faraday.new(EasyPost::TEST_API_ENDPOINT) }
+          stub_request(:get, EasyPost::TEST_API_ENDPOINT).to_return(status: 200, body: data)
         end
         context 'when data schema is invalid' do
           subject { -> { described_class.get } }
@@ -36,7 +36,7 @@ module EasyPost
       context 'when response is cached' do
         let(:data) { File.read('spec/fixtures/one_machine_response.json') }
         it 'only first request hits API' do
-          stub = stub_request(:get, EasyPost::DEFAULT_API_ENDPOINT).to_return(status: 200, body: data)
+          stub = stub_request(:get, EasyPost::TEST_API_ENDPOINT).to_return(status: 200, body: data)
 
           described_class.get
           described_class.get
