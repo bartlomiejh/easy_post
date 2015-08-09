@@ -8,6 +8,14 @@ Ruby wrapper for easyPack parcel lockers API (https://api-pl.easypack24.net/v4/m
 
 ## Installation
 
+Gem is not hosted on gem repo so please install it locally before you proceed (procedure tested with ruby 2.2.2):
+
+    $ git clone https://github.com/bartlomiejh/easy_post.git /my/folder
+    $ cd /my/folder
+    $ bundle
+    $ rake build
+    $ gem install --local /my/folder/pkg/easy_post-0.7.0.gem
+
 Add this line to your application's Gemfile:
 
 ```ruby
