@@ -16,5 +16,4 @@ describe EasyPost do
       it { is_expected.to have_attributes(api_endpoint: 'http://enpoint.from.block/') }
     end
   end
-
 end
