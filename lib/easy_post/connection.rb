@@ -21,6 +21,7 @@ module EasyPost
     def self.api_client
       Faraday.new(EasyPost.configuration.api_endpoint) do |faraday|
         faraday.response :caching do
+          # @review: Rails.cache can be used
           ActiveSupport::Cache::FileStore.new CACHE_DIR, namespace: 'easy_post', expires_in: CACHE_EXPIRES_S
         end
         faraday.adapter Faraday.default_adapter
