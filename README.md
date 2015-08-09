@@ -48,10 +48,12 @@ Additionally you can pass type value of parcel lockers that you want to render:
 
 All API requests are cached via ActiveSupport::Cache::FileStore under `File.join(ENV['TMPDIR'] || '/tmp', 'cache')` for 1 hour.
 
-To change api endpoint initialize EasyPost with new value during startup:
+To change api endpoint or caching parameters initialize EasyPost with new values during startup:
 ```ruby
     EasyPost.configure do |config|
       config.api_endpoint = 'https://my.api.endpoint'
+      config.cache_dir = 'my/cache/dir'
+      config.cache_expires_s = 30 #expires in 30s
     end
 ```
 
