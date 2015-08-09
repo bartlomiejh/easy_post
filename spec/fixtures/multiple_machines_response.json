@@ -124,7 +124,7 @@
                 "city": "Augustów",
                 "province": "podlaskie"
             },
-            "status": "Operating",
+            "status": "Not Operating",
             "address_str": "Wojska Polskiego 53, Augustów",
             "location": [53.84141, 22.97648],
             "location_description": "Przy markecie Kaufland"

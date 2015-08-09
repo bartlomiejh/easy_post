@@ -46,13 +46,20 @@ To render select list with all parcel lockers use helper:
 ```ruby
     <%= select_parcel_locker :select_id %>
 ```
-Helper described above is facade over select_tag so you can also pass all html options that select tag can take :
+
+Helper described above is facade over select_tag so you can also pass all html options that select tag can take:
 ```ruby
     <%= select_parcel_locker :select_id, {class: 'my-class', style: 'color: red;'} %>
 ```
+
 Additionally you can pass type value of parcel lockers that you want to render:
 ```ruby
     <%= select_parcel_locker :select_id, {class: 'my-class', style: 'color: red;'}, type_value %>
+```
+
+You can also pass code block to helper method which will take parcel lockers list as argument and return options for select list:
+```ruby
+    <%= select_parcel_locker(:select_id) { |lockers| lockers.collect { |l| [l.address['street'], l.id] } } %>
 ```
 
 All API requests are cached via ActiveSupport::Cache::FileStore under `File.join(ENV['TMPDIR'] || '/tmp', 'cache')` for 1 hour.

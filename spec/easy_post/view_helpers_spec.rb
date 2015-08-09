@@ -32,6 +32,17 @@ module EasyPost
         it { is_expected.not_to include '<option value="AUG01A">AUG01A</option>' }
         it { is_expected.not_to include '<option value="AUG848">AUG848</option>' }
       end
+
+      context 'when block is given' do
+        subject do
+          select_parcel_locker(:select_id) { |lockers| lockers.collect { |l| [l.status, l.id] } }
+        end
+        it { is_expected.to include '<option value="ALL992">Operating</option>' }
+        it { is_expected.to include '<option value="ALW01MP">Operating</option>' }
+        it { is_expected.to include '<option value="AND039">Operating</option>' }
+        it { is_expected.to include '<option value="AUG01A">Operating</option>' }
+        it { is_expected.to include '<option value="AUG848">Not Operating</option>' }
+      end
     end
   end
 end
