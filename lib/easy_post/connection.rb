@@ -19,7 +19,7 @@ module EasyPost
 
   module Connection
     def self.api_client
-      @api_client ||= Faraday.new(EasyPost.configuration.api_endpoint) do |faraday|
+      Faraday.new(EasyPost.configuration.api_endpoint) do |faraday|
         faraday.response :caching do
           ActiveSupport::Cache::FileStore.new CACHE_DIR, namespace: 'easy_post', expires_in: CACHE_EXPIRES_S
         end
