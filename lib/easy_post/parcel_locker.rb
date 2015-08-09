@@ -21,6 +21,7 @@ module EasyPost
       Connection.get.collect { |attr| ParcelLocker.new(attr) }
     end
 
+    # @review: we can do this in more REST-ful way and make API call
     def self.find(id)
       # @review: if we want to have kind of ActiveRecord style, then we can raise some kind of NotFoundError
       all.find { |parcel_locker| parcel_locker.id == id }
