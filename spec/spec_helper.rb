@@ -17,11 +17,9 @@ end
 
 EasyPost.configure do |config|
   config.api_endpoint = 'https://test.api.endpoint'
+  config.cache_dir = "tmp/cache/#{Time.now.to_i}"
 end
 
 module EasyPost
   TEST_API_ENDPOINT = 'https://test.api.endpoint'
-  module Connection
-    CACHE_DIR = "tmp/cache/#{Time.now.to_i}"
-  end
 end
