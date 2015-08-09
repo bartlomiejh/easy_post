@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/bartlomiejh/easy_post.svg)](https://travis-ci.org/bartlomiejh/easy_post)
 [![Coverage Status](https://coveralls.io/repos/bartlomiejh/easy_post/badge.svg?branch=master&service=github)](https://coveralls.io/github/bartlomiejh/easy_post?branch=master)
+[![Dependency Status](https://gemnasium.com/bartlomiejh/easy_post.svg)](https://gemnasium.com/bartlomiejh/easy_post)
 
 # EasyPost
 
