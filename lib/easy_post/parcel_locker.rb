@@ -17,10 +17,8 @@ module EasyPost
     end
 
     def self.all
-      response = EasyPost.api_client.get
-      JSON::Validator.validate!(SCHEMA, response.body)
       # @review: to be more loosely coupled it could be hash or openstruct
-      JSON.parse(response.body)['_embedded']['machines'].collect { |attr| ParcelLocker.new(attr) }
+      Connection.get.collect { |attr| ParcelLocker.new(attr) }
     end
 
     def self.find(id)

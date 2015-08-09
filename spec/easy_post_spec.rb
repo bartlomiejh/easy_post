@@ -17,15 +17,4 @@ describe EasyPost do
     end
   end
 
-  describe '#api_client' do
-    context 'when configured with endpoint' do
-      subject do
-        described_class.configure do |config|
-          config.api_endpoint = 'http://enpoint.from.block/'
-        end
-        described_class.api_client.url_prefix.to_s
-      end
-      it { is_expected.to eq 'http://enpoint.from.block/' }
-    end
-  end
 end

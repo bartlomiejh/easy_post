@@ -5,7 +5,7 @@ module EasyPost
     let(:data) { File.read('spec/fixtures/multiple_machines_response.json') }
 
     before :each do
-      allow(EasyPost).to receive(:api_client) { Faraday.new(EasyPost::DEFAULT_API_ENDPOINT) }
+      allow(EasyPost::Connection).to receive(:api_client) { Faraday.new(EasyPost::DEFAULT_API_ENDPOINT) }
       stub_request(:get, EasyPost::DEFAULT_API_ENDPOINT).to_return(status: 200, body: data)
     end
 

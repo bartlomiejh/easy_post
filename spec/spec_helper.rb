@@ -16,5 +16,7 @@ RSpec.configure do |config|
 end
 
 module EasyPost
-  CACHE_DIR = "tmp/cache/#{Time.now.to_i}"
+  module Connection
+    CACHE_DIR = "tmp/cache/#{Time.now.to_i}"
+  end
 end
