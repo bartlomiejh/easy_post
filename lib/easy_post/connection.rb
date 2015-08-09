@@ -14,8 +14,6 @@ module EasyPost
       }
     }
   }
-  CACHE_DIR = File.join(ENV['TMPDIR'] || '/tmp', 'cache')
-  CACHE_EXPIRES_S = 3600
 
   module Connection
     def self.api_client
