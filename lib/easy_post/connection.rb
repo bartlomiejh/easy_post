@@ -1,5 +1,5 @@
 module EasyPost
-  SCHEMA = {
+  CONTRACT = {
     type: 'object',
     required: ['_embedded'],
     properties: {
@@ -29,7 +29,7 @@ module EasyPost
 
     def self.get
       response = api_client.get
-      JSON::Validator.validate!(SCHEMA, response.body)
+      JSON::Validator.validate!(CONTRACT, response.body)
       JSON.parse(response.body)['_embedded']['machines']
     end
   end
