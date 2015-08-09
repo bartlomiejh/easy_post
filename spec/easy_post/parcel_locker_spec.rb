@@ -3,8 +3,7 @@ require 'spec_helper'
 module EasyPost
   describe ParcelLocker do
     before :each do
-      allow(EasyPost::Connection).to receive(:api_client) { Faraday.new(EasyPost::DEFAULT_API_ENDPOINT) }
-      stub_request(:get, EasyPost::DEFAULT_API_ENDPOINT).to_return(status: 200, body: data)
+      allow(EasyPost::Connection).to receive(:get) { JSON.parse(data)['_embedded']['machines'] }
     end
 
     describe '.all' do
